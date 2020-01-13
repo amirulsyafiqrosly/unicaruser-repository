@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "ion-driver",
-    "dev": "ion-driver"
+    "default": "unicar-platform"
   }
 }

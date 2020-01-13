@@ -50,12 +50,9 @@ export class AppComponent {
       url: '/list',
       icon: 'help-circle'
     },
-    {
-      title: 'Logout',
-      url: '/home',
-      icon: 'log-out'
-    }
+
   ];
+  navCtrl: any;
   constructor(
     public serviceProvider: IoncabServicesService,
     private platform: Platform,
@@ -82,13 +79,15 @@ export class AppComponent {
     });
   }
 
+  goToEditProfile() {
+    this.route.navigate(['profilepage']);
+  }
+
   logout(page) {
-    if (page.title === 'Logout') {
+{
       this.auth.logout().then(res => {
         this.route.navigate(['login']);
       });
-    } else {
-      this.route.navigate([page.url]);
+    }
     }
   }
-}
