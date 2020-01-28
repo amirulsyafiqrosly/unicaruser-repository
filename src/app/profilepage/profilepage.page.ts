@@ -19,6 +19,7 @@ import { UUID } from 'angular2-uuid';
 import { UtilService } from '../util.service';
 import { StorageService } from '../filestorage.service';
 import { FirestoreService } from '../firestore.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profilepage',
@@ -35,7 +36,8 @@ export class ProfilepagePage implements OnInit {
     private actionCtrl: ActionSheetController,
     private storageServ: StorageService,
     private firestore: FirestoreService,
-    public serviceProvider: IoncabServicesService) {
+    public serviceProvider: IoncabServicesService,
+    public navCtrl: NavController) {
     this.data = serviceProvider.country
   }
   ngOnInit() {
@@ -142,6 +144,11 @@ export class ProfilepagePage implements OnInit {
       console.log('errrrr', err);
     });
   }
+
+  updateProfile() {
+    this.navCtrl.back();
+  }
+  
   updateProfileDetails() {
     if (!this.user.name) {
       this.util.presentToast('Name cannot be empty', true, 'bottom', 2100);
@@ -153,6 +160,8 @@ export class ProfilepagePage implements OnInit {
     }
     const update = {
       name: this.user.name,
+      gender: this.user.gender,
+      id: this.user.id,
       email: this.user.email,
       phone: this.user.phone,
       profileImg: this.user.profileImg
@@ -161,6 +170,7 @@ export class ProfilepagePage implements OnInit {
     this.firestore.update('customers', this.user.id, update).then(data => {
       console.log(data);
       this.util.presentToast('Profile updated', true, 'bottom', 2100);
+      this.navCtrl.back();
     })
   }
 }
