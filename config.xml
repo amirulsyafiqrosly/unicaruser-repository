@@ -21,13 +21,13 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="<AIzaSyBy1qdWD0U0P7LGNYcNDDujM_gLKkQ_RwI>" />
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="<AIzaSyDkpOxQzseq_pvX4lNClE06spZIvY36L3U>" />
 
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="cordova-plugin-googlemaps" spec="^2.6.2">
-        <variable name="API_KEY_FOR_ANDROID" value="<AIzaSyBy1qdWD0U0P7LGNYcNDDujM_gLKkQ_RwI>" />
+        <variable name="API_KEY_FOR_ANDROID" value="<AIzaSyDkpOxQzseq_pvX4lNClE06spZIvY36L3U>" />
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>

@@ -167,7 +167,7 @@ export class RequestridePage implements OnInit {
     obj['uid'] = this.userid;
     this.http
       .post(
-        'https://us-central1-cab-dashboard.cloudfunctions.net/getDriver',
+        'https://us-central1-unicar-platform.cloudfunctions.net/getDriver',
         obj
       )
       .subscribe(async (res: any) => {
